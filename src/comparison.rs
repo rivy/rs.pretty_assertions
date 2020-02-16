@@ -52,9 +52,14 @@ pub fn format_comparison(
 ) -> fmt::Result {
     let diffs = &changeset.diffs;
 
-    writeln!(
+    let prefix_left = config.prefix_left;
+    let prefix_right = config.prefix_right;
+    let label_left = config._maybe_left_label.unwrap_or(config.default_left_label);
+    let label_right = config._maybe_right_label.unwrap_or(config.default_right_label);
+    let header_template = format!("{} {} / {} :", crate::Style::new().bold().paint("Diff"), "{prefix_left} {label_left}", "{label_right} {prefix_right}");
+    std::runtime_format::rt_writeln!(
         f,
-        "{} {} / {} :",
+        header_template,
         config.style.bold().paint("Diff"),
         painted!(
             config.style_left,
