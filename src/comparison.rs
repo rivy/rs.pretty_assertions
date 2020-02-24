@@ -29,9 +29,8 @@ impl Display for Comparison {
     }
 }
 
-// Adapted from:
-// https://github.com/johannhof/difference.rs/blob/c5749ad7d82aa3d480c15cb61af9f6baa08f116f/examples/github-style.rs
-// Credits johannhof (MIT License)
+// adapted from: <https://github.com/johannhof/difference.rs/blob/c5749ad7d82aa3d480c15cb61af9f6baa08f116f/examples/github-style.rs>
+// * credit to johannhof (MIT License)
 
 macro_rules! paint {
     ($f:ident, $colour:expr, $fmt:expr, $($args:tt)*) => (
@@ -78,10 +77,9 @@ pub fn format_comparison(
         )
     )?;
     for i in 0..diffs.len() {
+        // note: Difference::Changeset batches differences of the same type (Same, Add, or Rem) together within `diffs`, requiring splitting for processing
         match diffs[i] {
             Difference::Same(ref same) => {
-                // Have to split line by line in order to have the extra whitespace
-                // at the beginning.
                 for line in same.split('\n') {
                     writeln!(
                         f,

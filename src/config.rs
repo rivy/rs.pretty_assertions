@@ -12,7 +12,7 @@ pub struct Config {
     pub prefix_left: &'static str, // prefix text for left/first (aka prior) argument differences
     pub prefix_right: &'static str, // prefix text for right/second (aka after) argument differences
 
-    pub style: Style,            // style for baseline assertion output
+    pub style: Style, // style for baseline assertion output
     pub style_left: Style, // style for left/first (aka prior) argument (line-by-line) differences
     pub style_right: Style, // style for right/second (aka after) argument (line-by-line) differences
     pub style_left_diff: Style, // style for left/first (aka prior) argument intra-line differences

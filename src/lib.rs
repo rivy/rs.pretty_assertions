@@ -63,7 +63,7 @@
 //! * The replacement is only effective in your own crate, not in other libraries
 //!   you include.
 //! * `assert_ne` is also switched to multi-line presentation, but does _not_ show
-//!   a diff.
+//!   a diff (because the arguments are _equivalent_).
 
 extern crate ansi_term;
 extern crate difference;
@@ -78,8 +78,9 @@ mod config;
 
 pub use ansi_term::{Color, Colour, Style}; // re-exported for easier/direct usage when customizing Config
 
+pub use crate::config::Config; // struct/API to configure assertion
+
 pub use crate::comparison::Comparison; // private use; but required to be public for use in exported macros
-pub use crate::config::Config; // private use; but required to be public for use in exported macros
 
 #[cfg(windows)]
 use ctor::*;
