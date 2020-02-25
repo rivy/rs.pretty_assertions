@@ -1,9 +1,11 @@
 use crate::{Color, Style};
 
-/// Configuration structure for pretty assertions
+// Config
+/// A collection of properties defining output customization for pretty assertions.
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Config {
-    pub auto_label: bool, // automatically label assertion arguments (when possible)
+    /// automatically label assertion arguments (when possible)
+    pub auto_label: bool,
 
     pub default_label_left: &'static str, // default label for "left"
     pub default_label_right: &'static str, // default label for "right"
