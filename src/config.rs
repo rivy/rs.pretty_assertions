@@ -1,24 +1,34 @@
 use crate::{Color, Style};
 
 // Config
-/// A collection of properties defining output customization for pretty assertions.
+/// a collection of properties defining output customization for pretty assertions
 #[derive(Clone, Copy, Debug, PartialEq)]
 pub struct Config {
-    /// automatically label assertion arguments (when possible)
+    /// automatically label assertion arguments (when possible; only possible when using identifiers as arguments)
     pub auto_label: bool,
 
-    pub default_label_left: &'static str, // default label for "left"
-    pub default_label_right: &'static str, // default label for "right"
+    /// default label for left/first assertion argument
+    pub default_label_left: &'static str,
+    /// default label for right/second assertion argument
+    pub default_label_right: &'static str,
 
-    pub prefix: &'static str, // prefix for lines which don't differ between the assert arguments
-    pub prefix_left: &'static str, // prefix text for left/first (aka prior) argument differences
-    pub prefix_right: &'static str, // prefix text for right/second (aka after) argument differences
+    /// prefix for lines which don't differ between the assertion arguments
+    pub prefix: &'static str,
+    /// prefix text for left/first (aka prior) argument differences
+    pub prefix_left: &'static str,
+    /// prefix text for right/second (aka after) argument differences
+    pub prefix_right: &'static str,
 
-    pub style: Style, // style for baseline assertion output
-    pub style_left: Style, // style for left/first (aka prior) argument (line-by-line) differences
-    pub style_right: Style, // style for right/second (aka after) argument (line-by-line) differences
-    pub style_left_diff: Style, // style for left/first (aka prior) argument intra-line differences
-    pub style_right_diff: Style, // style for right/second (aka after) argument intra-line differences
+    /// style for baseline assertion output
+    pub style: Style,
+    /// style for left/first (aka prior) argument (line-by-line) differences
+    pub style_left: Style,
+    /// style for right/second (aka after) argument (line-by-line) differences
+    pub style_right: Style,
+    /// style for left/first (aka prior) argument intra-line differences
+    pub style_left_diff: Style,
+    /// style for right/second (aka after) argument intra-line differences
+    pub style_right_diff: Style,
 
     // "private"; but must be pub accessible for use in exported macros
     #[doc(hidden)]
