@@ -64,6 +64,14 @@
 //!   you include.
 //! * `assert_ne` is also switched to multi-line presentation, but does _not_ show
 //!   a diff (because the arguments are _equivalent_).
+//!
+//! ## Features
+//!
+//! ...
+//!
+//! ## Customization (via direct use of `with_config_assert_{eq,ne}`)
+//!
+//! ...
 
 extern crate ansi_term;
 extern crate difference;
