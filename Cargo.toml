@@ -1,0 +1,25 @@
+[package]
+name = "assert-lux"
+version = "0.0.0"
+authors = ["Roy Ivy III <rivy.dev@gmail.com>"]
+description = "improved assert macros"
+license = "MIT OR Apache-2.0"
+
+categories = ["os"]
+keywords = ["windows", "wildcards", "glob", "shell"]
+
+readme = "README.mkd"
+homepage = "https://github.com/rivy/rs.assert-lux"
+repository = "https://github.com/rivy/rs.assert-lux"
+
+edition = "2018"
+
+[package.metadata]
+copyright = "Copyright (C) Roy Ivy III"
+
+[lib]
+path = "src/lib/lib.rs"
+
+# ref: <https://doc.rust-lang.org/cargo/reference/manifest.html>
+
+[dependencies]
