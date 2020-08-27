@@ -23,3 +23,9 @@ path = "src/lib/lib.rs"
 # ref: <https://doc.rust-lang.org/cargo/reference/manifest.html>
 
 [dependencies]
+difference = "2.0.0"
+ansi_term = "0.11.0"
+
+[target.'cfg(windows)'.dependencies]
+output_vt100 = "0.1.2"
+ctor = "0.1.9"
