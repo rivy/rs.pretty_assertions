@@ -22,10 +22,19 @@ path = "src/lib/lib.rs"
 
 # ref: <https://doc.rust-lang.org/cargo/reference/manifest.html>
 
+[features]
+diffstyle_git = []
+labels = []
+
 [dependencies]
 difference = "2.0.0"
-ansi_term = "0.11.0"
+ansi_term = "= 0.11.0"
+
+[dev-dependencies.maybe-unwind]
+version = "= 0.1.2"
+# * avoid including unneeded "futures" feature to decrease build time
+default-features = false
 
 [target.'cfg(windows)'.dependencies]
-output_vt100 = "0.1.2"
-ctor = "0.1.9"
+output_vt100 = "= 0.1.2"
+ctor = "= 0.1.9"
